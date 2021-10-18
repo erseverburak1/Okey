@@ -59,23 +59,6 @@ public class OkeyGame implements OkeyInterface{
         return null;
     }
 
-    public ArrayList<ArrayList<Tile>> sameColors (){
-        ArrayList<Hand> allHands = dealTiles(allTiles);
-        ArrayList<ArrayList<Tile>>sameColors = new ArrayList<>();
-        for(int i =0;i<4;i++) {
-            for (int j = 0; j < allHands.get(i).getTiles().size(); j++) {
-                sameColors.add((ArrayList<Tile>) allHands.get(i).getTiles());
-                if ((allHands.get(i).getTiles().get(j).getCountNumber() % 13)==(allHands.get(i).getTiles().get(j).getCountNumber())){
-                    if((allHands.get(i).getTiles().get(j).getColor()==allHands.get(i).getTiles().get(j).getColor())){
-                        sameColors.remove(allHands.get(i).getTiles().get(j));
-                    }
-                }
-            }
-        }
-
-        return sameColors;
-    }
-
     private ArrayList<Tile> allTilesArrayConstructor(){ // a private method for building an arraylist of all tiles with order.
         int colorCounter=0;             //colors as numbers:(YELLOW:1, BLUE:2, BLACK:3, RED:4, GREEN(FALSE JOKER):5)
         int secondPartCounter;          //a counter for the second occurences for each tile.
